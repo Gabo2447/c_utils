@@ -18,14 +18,15 @@ endif()
 option(ENABLE_SANITIZERS "Enable address sanitizers and undefined-behavior sanitizers" OFF)
 
 if(ENABLE_SANITIZERS AND NOT MSVC)
-    add_compile_options(-fsanitize=address,undefined -fno-omit-frame-pointer)
-    add_link_options(-fsanitize=address,undefined)
+    add_compile_options(-fsanitize=address -fsanitize=undefined -fno-omit-frame-pointer)
+    add_link_options(-fsanitize=address -fsanitize=undefined)
 endif()
 
 # --- DEFINITION OF THE LIBRARY ---
 
 add_library(${PROJECT_NAME} STATIC
         src/linked_list.c
+        src/array_list.c
 )
 
 target_include_directories(${PROJECT_NAME}
