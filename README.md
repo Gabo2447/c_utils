@@ -4,7 +4,7 @@
 <p align="center">
   <a href="https://github.com/Gabo2447/c_utils/blob/main/LICENSE"><picture><source media="(prefers-color-scheme: dark)" srcset="https://shieldcn.dev/github/Gabo2447/c_utils/license.svg?size=default" /><img alt="license" src="https://shieldcn.dev/github/Gabo2447/c_utils/license.svg?size=default&amp;mode=light" /></picture></a>
   <a href="https://github.com/Gabo2447/c_utils/commits"><picture><source media="(prefers-color-scheme: dark)" srcset="https://shieldcn.dev/github/Gabo2447/c_utils/last-commit.svg?size=default" /><img alt="last commit" src="https://shieldcn.dev/github/Gabo2447/c_utils/last-commit.svg?size=default&amp;mode=light" /></picture></a>
-  <a href="https://github.com/Gabo2447/c_utils"><picture><source media="(prefers-color-scheme: dark)" srcset="https://shieldcn.dev/github/Gabo2447/c_utils/stars.svg?size=default" /><img alt="stars" src="https://shieldcn.dev/github/Gabo2447/c_utils/stars.svg?size=default&amp;mode=light" /></picture></a>
+  <a href="https://github.com/gabo2447/c_utils/releases"><picture><source media="(prefers-color-scheme: dark)" srcset="https://shieldcn.dev/github/gabo2447/c_utils/release.svg?size=default" /><img alt="release" src="https://shieldcn.dev/github/gabo2447/c_utils/release.svg?size=default&amp;mode=light" /></picture></a>
 </p>
 
 ## Overview
