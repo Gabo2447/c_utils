@@ -1,12 +1,11 @@
 set(TEST_UTILITIES_NAME c_utils-examples)
 
-set(SOURCES
-        linked_list_test.c
-)
+file(GLOB TEST_SOURCES "*_test.c")
 
-add_executable(${TEST_UTILITIES_NAME} ${SOURCES})
+foreach(SOURCE_FILE ${TEST_SOURCES})
+    get_filename_component(TEST_NAME ${SOURCE_FILE} NAME_WE)
 
-target_link_libraries(${TEST_UTILITIES_NAME} PRIVATE ${PROJECT_NAME})
-target_include_directories(${TEST_UTILITIES_NAME} PRIVATE ${CMAKE_CURRENT_SOURCE_DIR})
-
-add_test(NAME Linked_List_Tests COMMAND ${TEST_UTILITIES_NAME})
+    add_executable(${TEST_NAME} ${SOURCE_FILE})
+    target_link_libraries(${TEST_NAME} PRIVATE c_utils)
+    add_test(NAME ${TEST_NAME} COMMAND ${TEST_NAME})
+endforeach()
