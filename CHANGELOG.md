@@ -20,6 +20,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - logical check in `array_list_contains` that incorrectly restricted search execution based on list capacity.
 - missing NULL check for internal list instance in `queue_size`.
 - missing NULL check for internal list instance in `queue_clear`.
+- segmentation fault in `array_list_destroy` when passing a NULL pointer instance.
 
 ## [0.2.0] - 2026-09-23
 

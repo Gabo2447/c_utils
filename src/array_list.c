@@ -143,7 +143,18 @@ void array_list_clear(ArrayList *list, void (*free_fn)(void*)) {
 }
 
 void array_list_destroy(ArrayList *list, void (*free_fn)(void*)) {
-    array_list_clear(list, free_fn);
+    if (!list) {
+        return;
+    }
+
+    if (free_fn && list->items) {
+        for (size_t i = 0; i < list->size; i++) {
+            if (list->items[i]) {
+                free_fn(list->items[i]);
+            }
+        }
+    }
+    
     free(list->items);
     free(list);
 }
