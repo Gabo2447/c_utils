@@ -10,6 +10,15 @@
 typedef struct ArrayList ArrayList;
 
 /**
+ * @brief Function pointer type for element comparison.
+ *
+ * @param a Pointer to the first element.
+ * @param b Pointer to the second element.
+ * @return 0 if elements are equal, non-zero otherwise.
+ */
+typedef int (*CompareFn)(const void *a, const void *b);
+
+/**
  * @brief Creates a new, empty ArrayList with a default initial capacity.
  *
  * @return Pointer to the newly allocated ArrayList, or NULL if memory allocation fails.
@@ -83,6 +92,18 @@ size_t array_list_size(const ArrayList *list);
  * @note Time complexity: O(1).
  */
 bool array_list_is_empty(const ArrayList *list);
+
+/**
+ * @brief Checks if an element exists in the ArrayList using a comparison function.
+ *
+ * @param list Pointer to the constant ArrayList instance.
+ * @param element Generic pointer to the element to search for.
+ * @param cmp_fn Function pointer used to evaluate element equality. Must not be NULL.
+ * @return true if a matching element is found, false if not found, list is NULL, or cmp_fn is NULL.
+ *
+ * @note Time complexity: O(N).
+ */
+bool array_list_contains(const ArrayList *list, const void *element, CompareFn cmp_fn);
 
 /**
  * @brief Removes all elements from the ArrayList and frees internal memory, leaving it ready for reuse.

@@ -8,8 +8,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 # [Unreleased]
 
 ### Added
-
 - new core generic `queue` implementation.
+- Implemented the comparison logic for `ArrayList` using `CompareFn`.
 
 ## [0.2.0] - 2026-09-23
 

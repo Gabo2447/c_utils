@@ -111,6 +111,20 @@ bool array_list_is_empty(const ArrayList *list) {
     return array_list_size(list) == 0;
 }
 
+bool array_list_contains(const ArrayList *list, const void *element, const CompareFn cmp_fn) {
+    if (!list || list->size >= list->capacity || !cmp_fn) {
+        return false;
+    }
+
+    for (int index = 0; index < list->size; index++) {
+        if (cmp_fn(list->items[index], element) == 0) {
+            return true;
+        }
+    }
+
+    return false;
+}
+
 void array_list_clear(ArrayList *list, void (*free_fn)(void*)) {
     if (!list) {
         return;
