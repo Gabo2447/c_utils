@@ -8,10 +8,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 # [Unreleased]
 
 ### Added
-- new core generic `queue` implementation.
-- new comparison logic for `ArrayList` using `CompareFn`.
-- implemented comparison-based operations for `LinkedList` via `CompareFn`.
-- new `linked_list_find` function to `LinkedList` public API to search elements using a custom comparator function
+- new unit test suite for `HashMap` operations, bucket collisions, and dynamic memory cleanup.
+- new `linked_list_find` function to `LinkedList` public API to search elements using custom comparators (`CompareFn`)[cite: 1, 2].
+- new `linked_list_contains` function to `LinkedList` public API to check element presence[cite: 1, 2].
+- new `array_list_contains` function to `ArrayList` public API.
+
+### Changed
+- test suites for `ArrayList`, `LinkedList`, and `Queue` with comprehensive coverage for edge cases, boundary limits, and NULL parameter validation.
+
+### Fixed
+- logical check in `array_list_contains` that incorrectly restricted search execution based on list capacity.
+- missing NULL check for internal list instance in `queue_size`.
+- missing NULL check for internal list instance in `queue_clear`.
 
 ## [0.2.0] - 2026-09-23
 
