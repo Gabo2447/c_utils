@@ -97,6 +97,21 @@ bool linked_list_is_empty(const LinkedList* list);
 bool linked_list_contains(const LinkedList *list, const void *element, CompareFn cmp_fn);
 
 /**
+ * @brief Searches for an element in the LinkedList using a comparison function.
+ *
+ * Traverses the list sequentially using node pointers to find the first element
+ * that matches the target criteria.
+ *
+ * @param list Pointer to the constant LinkedList instance.
+ * @param target Generic pointer to the element or key to search for.
+ * @param cmp_fn Function pointer used to evaluate element equality. Must not be NULL.
+ * @return Generic pointer to the stored element if found, or NULL if not found, list is NULL, or cmp_fn is NULL.
+ *
+ * @note Time complexity: O(N) due to linear traversal.
+ */
+void* linked_list_find(const LinkedList* list, const void* target, CompareFn cmp_fn);
+
+/**
  * @brief Frees all internal nodes, resetting size to 0. Keeps the list instance alive.
  *
  * @param list Target list instance.

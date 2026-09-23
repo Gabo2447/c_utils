@@ -150,6 +150,22 @@ bool linked_list_contains(const LinkedList *list, const void *element, CompareFn
     return false;
 }
 
+void* linked_list_find(const LinkedList* list, const void* target, CompareFn cmp_fn) {
+    if (!list || !cmp_fn) {
+        return NULL;
+    }
+
+    Node *current = list->head;
+    while (current != NULL) {
+        if (cmp_fn(current->data, target) == 0) {
+            return current->data;
+        }
+        current = current->next;
+    }
+
+    return NULL;
+}
+
 void linked_list_clear(LinkedList* list, void (*free_fn)(void*)) {
     if (!list || !list->head) {
         return;

@@ -11,6 +11,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - new core generic `queue` implementation.
 - new comparison logic for `ArrayList` using `CompareFn`.
 - implemented comparison-based operations for `LinkedList` via `CompareFn`.
+- new `linked_list_find` function to `LinkedList` public API to search elements using a custom comparator function
 
 ## [0.2.0] - 2026-09-23
 
