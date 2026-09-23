@@ -10,6 +10,15 @@
 typedef struct LinkedList LinkedList;
 
 /**
+ * @brief Function pointer type for element comparison.
+ *
+ * @param a Pointer to the first element.
+ * @param b Pointer to the second element.
+ * @return 0 if elements are equal, non-zero otherwise.
+ */
+typedef int (*CompareFn)(const void *a, const void *b);
+
+/**
  * @brief Allocates and initializes a new LinkedList instance.
  *
  * @return Pointer to the new LinkedList, or NULL on allocation failure.
@@ -74,6 +83,18 @@ size_t linked_list_size(const LinkedList* list);
  * @return true if empty or list is NULL, false otherwise.
  */
 bool linked_list_is_empty(const LinkedList* list);
+
+/**
+ * @brief Checks if an element exists in the LinkedList using a comparison function.
+ *
+ * @param list Pointer to the constant LinkedList instance.
+ * @param element Generic pointer to the element to search for.
+ * @param cmp_fn Function pointer used to evaluate element equality. Must not be NULL.
+ * @return true if a matching element is found, false if not found, list is NULL, or cmp_fn is NULL.
+ *
+ * @note Time complexity: O(N) due to sequential node traversal.
+ */
+bool linked_list_contains(const LinkedList *list, const void *element, CompareFn cmp_fn);
 
 /**
  * @brief Frees all internal nodes, resetting size to 0. Keeps the list instance alive.

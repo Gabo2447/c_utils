@@ -134,6 +134,22 @@ bool linked_list_is_empty(const LinkedList* list) {
     return linked_list_size(list) == 0;
 }
 
+bool linked_list_contains(const LinkedList *list, const void *element, CompareFn cmp_fn) {
+    if (!list || !cmp_fn) {
+        return false;
+    }
+
+    Node *current = list->head;
+    while (current != NULL) {
+        if (cmp_fn(current->data, element) == 0) {
+            return true;
+        }
+        current = current->next;
+    }
+
+    return false;
+}
+
 void linked_list_clear(LinkedList* list, void (*free_fn)(void*)) {
     if (!list || !list->head) {
         return;
