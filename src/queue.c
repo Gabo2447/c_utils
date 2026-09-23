@@ -31,6 +31,9 @@ bool queue_is_empty(const Queue *queue) {
 }
 
 size_t queue_size(const Queue *queue) {
+    if (!queue || !queue->list) {
+        return 0;
+    }
     return linked_list_size(queue->list);
 }
 
@@ -59,7 +62,7 @@ void* queue_peek(const Queue *queue) {
 }
 
 void queue_clear(Queue *queue, void (*free_fn)(void*)) {
-    if (!queue) {
+    if (!queue || !queue->list) {
         return;
     }
 

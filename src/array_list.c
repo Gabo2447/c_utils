@@ -112,7 +112,7 @@ bool array_list_is_empty(const ArrayList *list) {
 }
 
 bool array_list_contains(const ArrayList *list, const void *element, const CompareFn cmp_fn) {
-    if (!list || list->size >= list->capacity || !cmp_fn) {
+    if (!list || !cmp_fn || array_list_is_empty(list)) {
         return false;
     }
 
