@@ -29,6 +29,7 @@ add_library(${PROJECT_NAME} STATIC
         src/array_list.c
         src/queue.c
         src/hash_map.c
+        src/stack.c
 )
 
 target_include_directories(${PROJECT_NAME}
